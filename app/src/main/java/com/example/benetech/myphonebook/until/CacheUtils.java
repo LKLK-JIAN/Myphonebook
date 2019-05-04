@@ -2,8 +2,12 @@ package com.example.benetech.myphonebook.until;
 
 import android.content.Context;
 import android.os.Environment;
+import android.util.Log;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class CacheUtils {
 
@@ -84,12 +88,25 @@ public class CacheUtils {
             if (file.isFile()) {
                 dirSize += file.length();
             } else if (file.isDirectory()) {
-                dirSize += file.length();
                 dirSize += getDirSize(file); // 递归调用继续统计
             }
         }
         return dirSize;
     }
+
+    public static long getFileSize(File file) throws IOException {
+        long size = 0;
+        if (file.exists()) {
+            FileInputStream fis = null;
+            fis = new FileInputStream(file);
+            size = fis.available();
+        } else {
+            file.createNewFile();
+            Log.e("获取文件大小", "文件不存在!");
+        }
+        return size;
+    }
+
 
     /**
      * 转换文件大小
