@@ -86,10 +86,9 @@ public class Main4Activity extends AppCompatActivity implements View.OnClickList
                 if(BigDecimalUtils.compare(b1,b2)){
                     result.setText(  "true");
                 }
-                else{
+                else {
                     result.setText(  "false");
                 }
-
                 break;
 
 

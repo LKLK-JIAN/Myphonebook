@@ -41,7 +41,7 @@ public class Main6Activity extends AppCompatActivity {
         }
         /**
          *  注意返回值
-         *  true：view继续响应Touch操作；
+         *  true： view继续响应Touch操作；
          *  false：view不再响应Touch操作，故此处若为false，只能显示起始位置，不能显示实时位置和结束位置
          */
         return super.onTouchEvent(event);

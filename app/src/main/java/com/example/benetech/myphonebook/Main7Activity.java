@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class Main7Activity extends AppCompatActivity {
     private TextView tv_main7_getdsize;
-    String DATABASE_PATH = Environment
+    private String DATABASE_PATH = Environment
             .getExternalStorageDirectory()+"/AnemoMates";
 
     @Override
@@ -38,12 +38,11 @@ public class Main7Activity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
                 tv_main7_getdsize.setText(CacheUtils.formatFileSize(size)+""+CacheUtils.formatFileSize(filesize));
-
             }
         });
     }
+    
 
     private void addPermissin1() {
         final int REQUEST_CODE_ACCESS_COARSE_LOCATION = 1;

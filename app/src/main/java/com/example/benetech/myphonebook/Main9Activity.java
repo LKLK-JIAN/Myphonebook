@@ -30,13 +30,13 @@ public class Main9Activity extends AppCompatActivity implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main9);
-        getPhoneNumberFromMobile = new GetPhoneNumberFromMobile();
-        lv=findViewById(R.id.contents_view);
-        addPermissin1();
-        list = getPhoneNumberFromMobile.getPhoneNumberFromMobile(this);
-        adapter = new MyPhoneAdapter(list, this);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(this);
+            getPhoneNumberFromMobile = new GetPhoneNumberFromMobile();
+            lv=findViewById(R.id.contents_view);
+            addPermissin1();
+            list = getPhoneNumberFromMobile.getPhoneNumberFromMobile(this);
+            adapter = new MyPhoneAdapter(list, this);
+            lv.setAdapter(adapter);
+            lv.setOnItemClickListener(this);
 
     }
 

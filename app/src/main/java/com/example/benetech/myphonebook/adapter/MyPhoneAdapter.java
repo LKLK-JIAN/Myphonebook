@@ -20,7 +20,7 @@ public class MyPhoneAdapter extends BaseAdapter {
         this.list = list;
         this.context = context;
     }
-
+//
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
@@ -42,15 +42,21 @@ public class MyPhoneAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
+        ViewHolder viewHolder;
         if (convertView == null) {
-            ViewHolder viewHolder = new ViewHolder();
+
+            viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.myadapteritem, null);
             viewHolder.name = (TextView) convertView.findViewById(R.id.tv_adapteritem_name);
             viewHolder.number = (TextView) convertView.findViewById(R.id.tv_adapteritem_number);
-            viewHolder.name.setText(list.get(position).getName());
-            viewHolder.number.setText(list.get(position).getNumber());
+
+            convertView.setTag(viewHolder);
+        }else {
+            viewHolder= (ViewHolder)convertView.getTag();
         }
+        viewHolder.name.setText(list.get(position).getName());
+        viewHolder.number.setText(list.get(position).getNumber());
         return convertView;
     }
 

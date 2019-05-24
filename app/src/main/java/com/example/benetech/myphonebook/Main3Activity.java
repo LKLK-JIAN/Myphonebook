@@ -28,10 +28,6 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        //取消标题栏
-
-        //由于主要是用于测试，并且便于新手理解，所以activity_main布局写的很简单
-        setContentView(R.layout.activity_main);
 
         notificationManager  = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         context=getApplicationContext();
@@ -78,7 +74,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 //                       //VISIBILITY_PUBLIC  只有在没有锁屏时会显示通知
 //                       //VISIBILITY_PRIVATE 任何情况都会显示通知
 //                       //VISIBILITY_SECRET  在安全锁和没有锁屏的情况下显示通知
-//                       .setContentIntent(pi);  //3.关联PendingIntent
+//                       .setContentIntent(pi);  //3.关联PendingIntentn
+
 //               myNotification = myBuilder.build();
 //               //4.通过通知管理器来发起通知，ID区分通知
 //               myManager.notify(NOTIFICATION_ID_1, myNotification);
@@ -106,9 +103,6 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                    notification = notificationBuilder.build();
                }
                notificationManager.notify(111123, notification);
-
-
-
                break;
            case R.id.off:
                notificationManager.cancel(NOTIFICATION_ID_1);

@@ -74,12 +74,12 @@ public class MainActivity extends AppCompatActivity {
                     continue;
 
                 // 得到联系人名称
-                String contactName = phoneCursor.getString(PHONES_DISPLAY_NAME);
+                String contactName  = phoneCursor.getString(PHONES_DISPLAY_NAME);
 
                 // 得到联系人ID
-                Long contactid = phoneCursor.getLong(PHONES_CONTACT_ID);
+                Long contactid      = phoneCursor.getLong(PHONES_CONTACT_ID);
                 // 得到联系人头像ID
-                Long imgid = phoneCursor.getLong(PHONES_PHOTO_ID);
+                Long imgid          = phoneCursor.getLong(PHONES_PHOTO_ID);
 
                 // 得到联系人头像Bitamp
                 Bitmap contactPhoto = null;
